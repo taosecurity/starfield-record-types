@@ -130,16 +130,17 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
   <li><a href="#top">Top</a></li>
   <li><a href="#basics">Plugin basics</a></li>
   <li><a href="#glance">At a glance</a></li>
-  <li class="gap"><a href="#characters"><b class="lbl"><i class="dot" style="--h: 45"></i>Characters &amp; AI</b> <span>27</span></a></li>
-  <li><a href="#items"><b class="lbl"><i class="dot" style="--h: 182"></i>Items</b> <span>27</span></a></li>
-  <li><a href="#quests"><b class="lbl"><i class="dot" style="--h: 320"></i>Quests &amp; dialogue</b> <span>11</span></a></li>
-  <li><a href="#world"><b class="lbl"><i class="dot" style="--h: 98"></i>World &amp; cells</b> <span>28</span></a></li>
-  <li><a href="#space"><b class="lbl"><i class="dot" style="--h: 235"></i>Space &amp; planets</b> <span>27</span></a></li>
-  <li><a href="#outposts"><b class="lbl"><i class="dot" style="--h: 12"></i>Outposts &amp; ship building</b> <span>5</span></a></li>
-  <li><a href="#audio"><b class="lbl"><i class="dot" style="--h: 150"></i>Audio</b> <span>14</span></a></li>
-  <li><a href="#visuals"><b class="lbl"><i class="dot" style="--h: 288"></i>Visuals &amp; effects</b> <span>25</span></a></li>
-  <li><a href="#settings"><b class="lbl"><i class="dot" style="--h: 65"></i>Settings &amp; lists</b> <span>12</span></a></li>
-  <li><a href="#other"><b class="lbl"><i class="dot" style="--h: 202"></i>Other</b> <span>4</span></a></li>
+  <li class="gap"><a href="#popular"><b class="lbl"><i class="dot" style="--h: 45"></i>Popular record types</b> <span>33</span></a></li>
+  <li><a href="#characters"><b class="lbl"><i class="dot" style="--h: 182"></i>Characters &amp; AI</b> <span>27</span></a></li>
+  <li><a href="#items"><b class="lbl"><i class="dot" style="--h: 320"></i>Items</b> <span>27</span></a></li>
+  <li><a href="#quests"><b class="lbl"><i class="dot" style="--h: 98"></i>Quests &amp; dialogue</b> <span>11</span></a></li>
+  <li><a href="#world"><b class="lbl"><i class="dot" style="--h: 235"></i>World &amp; cells</b> <span>28</span></a></li>
+  <li><a href="#space"><b class="lbl"><i class="dot" style="--h: 12"></i>Space &amp; planets</b> <span>27</span></a></li>
+  <li><a href="#outposts"><b class="lbl"><i class="dot" style="--h: 150"></i>Outposts &amp; ship building</b> <span>5</span></a></li>
+  <li><a href="#audio"><b class="lbl"><i class="dot" style="--h: 288"></i>Audio</b> <span>14</span></a></li>
+  <li><a href="#visuals"><b class="lbl"><i class="dot" style="--h: 65"></i>Visuals &amp; effects</b> <span>25</span></a></li>
+  <li><a href="#settings"><b class="lbl"><i class="dot" style="--h: 202"></i>Settings &amp; lists</b> <span>12</span></a></li>
+  <li><a href="#other"><b class="lbl"><i class="dot" style="--h: 340"></i>Other</b> <span>4</span></a></li>
   <li class="gap"><a href="#console">Console commands</a></li>
   <li><a href="#about">About this list</a></li>
   <li><a href="#why">Why record types matter</a></li>
@@ -241,7 +242,50 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
   </div>
   </details>
 </section>
-<section id="characters" class="cat" style="--h: 45">
+<section id="popular" class="cat" style="--h: 45">
+  <h2>Popular record types <small></small></h2>
+  <p class="lede">Hand-picked: the types modders and testers meet most, in a rough order from characters and items to quests, places and settings. Each one also appears in its own category below.</p>
+  <div class="frame"><table>
+    <colgroup><col class="c-code"><col class="c-name"><col class="c-what"><col class="c-n"><col class="c-eg"></colgroup>
+    <thead><tr><th>Code</th><th>Name (xEdit)</th><th>What it is</th><th class="num">Records</th><th>Sample editor ID</th></tr></thead>
+    <tbody>
+      <tr id="p-npc_" data-hay="npc_ non-player character the base record for any person, robot or creature, including the player. it sets race, stats, looks, inventory, factions and ai. people standing in the world are placed copies of it (achr). player characters &amp; ai" data-unsure="0" data-dup="1"><td class="code" data-t>NPC_</td><td><span data-t>Non-Player Character</span> </td><td data-t>The base record for any person, robot or creature, including the player. It sets race, stats, looks, inventory, factions and AI. People standing in the world are placed copies of it (ACHR).</td><td class="num">7,131</td><td class="eg"><span data-t>Player</span></td></tr>
+      <tr id="p-achr" data-hay="achr placed npc one person or creature placed in a cell: a copy of an npc_ base record with its own position. these live inside cells, not in a top-level group. issaeklundref characters &amp; ai" data-unsure="0" data-dup="1"><td class="code" data-t>ACHR</td><td><span data-t>Placed NPC</span> <span class="tag inside" title="Lives inside cells, not in its own top-level group">in cells</span></td><td data-t>One person or creature placed in a cell: a copy of an NPC_ base record with its own position. These live inside cells, not in a top-level group.</td><td class="num">9,530</td><td class="eg"><span data-t>IssaEklundREF</span></td></tr>
+      <tr id="p-race" data-hay="race race a body type: human, robot model, or creature kind. it sets the skeleton, body parts, movement and default abilities. humanrace characters &amp; ai" data-unsure="0" data-dup="1"><td class="code" data-t>RACE</td><td><span data-t>Race</span> </td><td data-t>A body type: human, robot model, or creature kind. It sets the skeleton, body parts, movement and default abilities.</td><td class="num">31</td><td class="eg"><span data-t>HumanRace</span></td></tr>
+      <tr id="p-fact" data-hay="fact faction a faction: a group of npcs with shared relationships, crime rules, ranks and vendor settings. many are also used as simple yes/no tags on npcs. cf06_komikoeuphorikafaction characters &amp; ai" data-unsure="0" data-dup="1"><td class="code" data-t>FACT</td><td><span data-t>Faction</span> </td><td data-t>A faction: a group of NPCs with shared relationships, crime rules, ranks and vendor settings. Many are also used as simple yes/no tags on NPCs.</td><td class="num">812</td><td class="eg"><span data-t>CF06_KomikoEuphorikaFaction</span></td></tr>
+      <tr id="p-perk" data-hay="perk perk a perk or hidden ability: skill ranks, traits, and invisible effects that quests and gear give to actors. mq106helixreducedamage characters &amp; ai" data-unsure="0" data-dup="1"><td class="code" data-t>PERK</td><td><span data-t>Perk</span> </td><td data-t>A perk or hidden ability: skill ranks, traits, and invisible effects that quests and gear give to actors.</td><td class="num">502</td><td class="eg"><span data-t>MQ106HelixReduceDamage</span></td></tr>
+      <tr id="p-spel" data-hay="spel spell a bundle of magic effects given to an actor: abilities, hazard damage, starborn powers, ship buffs. shipabilitybuffreactor_01 characters &amp; ai" data-unsure="0" data-dup="1"><td class="code" data-t>SPEL</td><td><span data-t>Spell</span> </td><td data-t>A bundle of magic effects given to an actor: abilities, hazard damage, Starborn powers, ship buffs.</td><td class="num">584</td><td class="eg"><span data-t>ShipAbilityBuffReactor_01</span></td></tr>
+      <tr id="p-mgef" data-hay="mgef magic effect one magic effect, the basic unit of any effect on an actor: damage over time, a stat boost, an affliction. spells, chems and enchantments are built from these. abfortifystrafespeed characters &amp; ai" data-unsure="0" data-dup="1"><td class="code" data-t>MGEF</td><td><span data-t>Magic Effect</span> </td><td data-t>One magic effect, the basic unit of any effect on an actor: damage over time, a stat boost, an affliction. Spells, chems and enchantments are built from these.</td><td class="num">853</td><td class="eg"><span data-t>abFortifyStrafeSpeed</span></td></tr>
+      <tr id="p-weap" data-hay="weap weapon a weapon: guns, melee weapons and ship weapons, with damage, range, ammo and model. razorback items" data-unsure="0" data-dup="1"><td class="code" data-t>WEAP</td><td><span data-t>Weapon</span> </td><td data-t>A weapon: guns, melee weapons and ship weapons, with damage, range, ammo and model.</td><td class="num">406</td><td class="eg"><span data-t>Razorback</span></td></tr>
+      <tr id="p-armo" data-hay="armo armor armor and clothing as inventory items: spacesuits, helmets, packs, outfits. the naked body skins are armo records too. skin_naked items" data-unsure="0" data-dup="1"><td class="code" data-t>ARMO</td><td><span data-t>Armor</span> </td><td data-t>Armor and clothing as inventory items: spacesuits, helmets, packs, outfits. The naked body skins are ARMO records too.</td><td class="num">1,017</td><td class="eg"><span data-t>Skin_Naked</span></td></tr>
+      <tr id="p-arma" data-hay="arma armor addon an armor addon: the 3d model part of a clothing or armor item for a given body. one armo can use several. aa_clothes_varuun_ambassador_lowerbody items" data-unsure="0" data-dup="1"><td class="code" data-t>ARMA</td><td><span data-t>Armor Addon</span> </td><td data-t>An armor addon: the 3D model part of a clothing or armor item for a given body. One ARMO can use several.</td><td class="num">1,106</td><td class="eg"><span data-t>AA_Clothes_Varuun_Ambassador_LowerBody</span></td></tr>
+      <tr id="p-ammo" data-hay="ammo ammunition ammunition, including the hidden ammo that ship weapons and turrets use. ammolaser items" data-unsure="0" data-dup="1"><td class="code" data-t>AMMO</td><td><span data-t>Ammunition</span> </td><td data-t>Ammunition, including the hidden ammo that ship weapons and turrets use.</td><td class="num">150</td><td class="eg"><span data-t>AmmoLaser</span></td></tr>
+      <tr id="p-misc" data-hay="misc misc. item a misc item: anything else you can carry, such as digipicks, credits, plushies and junk. digipick items" data-unsure="0" data-dup="1"><td class="code" data-t>MISC</td><td><span data-t>Misc. Item</span> </td><td data-t>A misc item: anything else you can carry, such as digipicks, credits, plushies and junk.</td><td class="num">1,319</td><td class="eg"><span data-t>Digipick</span></td></tr>
+      <tr id="p-alch" data-hay="alch ingestible an ingestible: food, drink, chems and aid items such as med packs. food_produce_pear items" data-unsure="0" data-dup="1"><td class="code" data-t>ALCH</td><td><span data-t>Ingestible</span> </td><td data-t>An ingestible: food, drink, chems and aid items such as Med Packs.</td><td class="num">353</td><td class="eg"><span data-t>Food_Produce_Pear</span></td></tr>
+      <tr id="p-book" data-hay="book book a readable item. in starfield these are mostly data slates and notes. cf_kryxhistoryinterview_slate001 items" data-unsure="0" data-dup="1"><td class="code" data-t>BOOK</td><td><span data-t>Book</span> </td><td data-t>A readable item. In Starfield these are mostly data slates and notes.</td><td class="num">992</td><td class="eg"><span data-t>CF_KryxHistoryInterview_Slate001</span></td></tr>
+      <tr id="p-omod" data-hay="omod object modification an object modification: a weapon or armor mod. starfield also uses them for creature traits (mod_cct) and legendary effects. mod_legendary_armor_03_incendiary items" data-unsure="0" data-dup="1"><td class="code" data-t>OMOD</td><td><span data-t>Object Modification</span> </td><td data-t>An object modification: a weapon or armor mod. Starfield also uses them for creature traits (mod_CCT) and legendary effects.</td><td class="num">2,682</td><td class="eg"><span data-t>mod_Legendary_Armor_03_Incendiary</span></td></tr>
+      <tr id="p-lvli" data-hay="lvli leveled item a leveled item: a list the game picks random loot from, often by player level. containers and vendors use these. ll_weapon_reward_mq105 items" data-unsure="0" data-dup="1"><td class="code" data-t>LVLI</td><td><span data-t>Leveled Item</span> </td><td data-t>A leveled item: a list the game picks random loot from, often by player level. Containers and vendors use these.</td><td class="num">5,556</td><td class="eg"><span data-t>LL_Weapon_Reward_MQ105</span></td></tr>
+      <tr id="p-lvln" data-hay="lvln leveled npc a leveled npc: a list the game picks a random person or creature from, often by player level. spawns use these. _sq_group_occupation_lchar_old characters &amp; ai" data-unsure="0" data-dup="1"><td class="code" data-t>LVLN</td><td><span data-t>Leveled NPC</span> </td><td data-t>A leveled NPC: a list the game picks a random person or creature from, often by player level. Spawns use these.</td><td class="num">243</td><td class="eg"><span data-t>_SQ_Group_Occupation_LChar_Old</span></td></tr>
+      <tr id="p-cobj" data-hay="cobj constructible object a constructible object: a recipe for something you can build or craft, with its cost. weapon mods, outpost modules and ship modules (co_sma) all use these. co_ship_defensivebattery_laser_dummyfire items" data-unsure="0" data-dup="1"><td class="code" data-t>COBJ</td><td><span data-t>Constructible Object</span> </td><td data-t>A constructible object: a recipe for something you can build or craft, with its cost. Weapon mods, outpost modules and ship modules (co_SMA) all use these.</td><td class="num">3,009</td><td class="eg"><span data-t>co_Ship_DefensiveBattery_Laser_DummyFire</span></td></tr>
+      <tr id="p-cont" data-hay="cont container a container: chests, lockers, safes and boxes, with their starting contents. mq101_loot_storage_safe_floor_tall_rare world &amp; cells" data-unsure="0" data-dup="1"><td class="code" data-t>CONT</td><td><span data-t>Container</span> </td><td data-t>A container: chests, lockers, safes and boxes, with their starting contents.</td><td class="num">707</td><td class="eg"><span data-t>MQ101_Loot_Storage_Safe_Floor_Tall_Rare</span></td></tr>
+      <tr id="p-qust" data-hay="qust quest a quest. besides the ones in your log, many are hidden background quests that run companions, radiant missions, ambient events or game systems. mq_tutorialquest_misc05 quests &amp; dialogue" data-unsure="0" data-dup="1"><td class="code" data-t>QUST</td><td><span data-t>Quest</span> </td><td data-t>A quest. Besides the ones in your log, many are hidden background quests that run companions, radiant missions, ambient events or game systems.</td><td class="num">2,077</td><td class="eg"><span data-t>MQ_TutorialQuest_Misc05</span></td></tr>
+      <tr id="p-dial" data-hay="dial dialog topic a dialogue topic: one thing a conversation can be about, such as a greeting or a player choice. it holds the lines (info) that answer it. cf01_hellos quests &amp; dialogue" data-unsure="0" data-dup="1"><td class="code" data-t>DIAL</td><td><span data-t>Dialog Topic</span> </td><td data-t>A dialogue topic: one thing a conversation can be about, such as a greeting or a player choice. It holds the lines (INFO) that answer it.</td><td class="num">68,154</td><td class="eg"><span data-t>CF01_Hellos</span></td></tr>
+      <tr id="p-info" data-hay="info dialog response a dialogue response: one line (or a group of lines) an npc or the player can say, with the conditions for when it is used. the second most common record type. com_barrett_bq01_infogroup_otherbarrett quests &amp; dialogue" data-unsure="0" data-dup="1"><td class="code" data-t>INFO</td><td><span data-t>Dialog response</span> </td><td data-t>A dialogue response: one line (or a group of lines) an NPC or the player can say, with the conditions for when it is used. The second most common record type.</td><td class="num">126,347</td><td class="eg"><span data-t>COM_Barrett_BQ01_InfoGroup_OtherBarrett</span></td></tr>
+      <tr id="p-scen" data-hay="scen scene a scene: a scripted sequence where actors talk, move and animate, such as a conversation you overhear. templateonlycamerascene quests &amp; dialogue" data-unsure="0" data-dup="1"><td class="code" data-t>SCEN</td><td><span data-t>Scene</span> </td><td data-t>A scene: a scripted sequence where actors talk, move and animate, such as a conversation you overhear.</td><td class="num">7,613</td><td class="eg"><span data-t>TemplateOnlyCameraScene</span></td></tr>
+      <tr id="p-cell" data-hay="cell cell a cell: an interior (a room, a ship&#x27;s inside) or one square of ground in a worldspace. it holds everything placed there. starfield also uses many cells only as storage for pack-in parts. packinsccabinetkitwallsm03astoragecell world &amp; cells" data-unsure="0" data-dup="1"><td class="code" data-t>CELL</td><td><span data-t>Cell</span> </td><td data-t>A cell: an interior (a room, a ship&#x27;s inside) or one square of ground in a worldspace. It holds everything placed there. Starfield also uses many cells only as storage for pack-in parts.</td><td class="num">30,717</td><td class="eg"><span data-t>PackInSCCabinetKitWallSm03aStorageCell</span></td></tr>
+      <tr id="p-wrld" data-hay="wrld worldspace a worldspace: a large outdoor area made of exterior cells, such as a planet surface map or a city. many small ones are overlays for planet points of interest. defaultworld world &amp; cells" data-unsure="0" data-dup="1"><td class="code" data-t>WRLD</td><td><span data-t>Worldspace</span> </td><td data-t>A worldspace: a large outdoor area made of exterior cells, such as a planet surface map or a city. Many small ones are overlays for planet points of interest.</td><td class="num">433</td><td class="eg"><span data-t>DefaultWorld</span></td></tr>
+      <tr id="p-lctn" data-hay="lctn location a location: a named place (city, dungeon, ship, planet) with its properties. quests use these, and they track things like &quot;cleared&quot;. oeaf015location world &amp; cells" data-unsure="0" data-dup="1"><td class="code" data-t>LCTN</td><td><span data-t>Location</span> </td><td data-t>A location: a named place (city, dungeon, ship, planet) with its properties. Quests use these, and they track things like &quot;cleared&quot;.</td><td class="num">6,017</td><td class="eg"><span data-t>OEAF015Location</span></td></tr>
+      <tr id="p-refr" data-hay="refr placed object a placed object: one copy of an item, static, door, light or marker at a spot in a cell. 86% of all records in starfield.esm are these. they live inside cells, not in a top-level group. jaedashipref world &amp; cells" data-unsure="0" data-dup="1"><td class="code" data-t>REFR</td><td><span data-t>Placed Object</span> <span class="tag inside" title="Lives inside cells, not in its own top-level group">in cells</span></td><td data-t>A placed object: one copy of an item, static, door, light or marker at a spot in a cell. 86% of all records in Starfield.esm are these. They live inside cells, not in a top-level group.</td><td class="num">3,291,860</td><td class="eg"><span data-t>JaedaShipRef</span></td></tr>
+      <tr id="p-furn" data-hay="furn furniture furniture: things actors sit on, lean on or use, such as chairs, beds and workbenches, plus invisible markers for poses like surrendering. npcsurrender world &amp; cells" data-unsure="0" data-dup="1"><td class="code" data-t>FURN</td><td><span data-t>Furniture</span> </td><td data-t>Furniture: things actors sit on, lean on or use, such as chairs, beds and workbenches, plus invisible markers for poses like surrendering.</td><td class="num">899</td><td class="eg"><span data-t>NPCSurrender</span></td></tr>
+      <tr id="p-pndt" data-hay="pndt planet a planet or moon: its size, orbit, biomes and resources. some are only orbit data for a quest location. _rl082orbitalplanetdata space &amp; planets" data-unsure="0" data-dup="1"><td class="code" data-t>PNDT</td><td><span data-t>Planet</span> </td><td data-t>A planet or moon: its size, orbit, biomes and resources. Some are only orbit data for a quest location.</td><td class="num">1,765</td><td class="eg"><span data-t>_RL082OrbitalPlanetData</span></td></tr>
+      <tr id="p-kywd" data-hay="kywd keyword a keyword: a tag attached to records so scripts and conditions can ask &quot;is this a ...?&quot;. very widely used. splinelink settings &amp; lists" data-unsure="0" data-dup="1"><td class="code" data-t>KYWD</td><td><span data-t>Keyword</span> </td><td data-t>A keyword: a tag attached to records so scripts and conditions can ask &quot;is this a ...?&quot;. Very widely used.</td><td class="num">5,931</td><td class="eg"><span data-t>SplineLink</span></td></tr>
+      <tr id="p-flst" data-hay="flst formid list a form list: a list of records others refer to as one group. helpmanualpc settings &amp; lists" data-unsure="0" data-dup="1"><td class="code" data-t>FLST</td><td><span data-t>FormID List</span> </td><td data-t>A form list: a list of records others refer to as one group.</td><td class="num">1,142</td><td class="eg"><span data-t>HelpManualPC</span></td></tr>
+      <tr id="p-glob" data-hay="glob global a global: a named value any quest, script or condition can read, such as gamehour, or a mod&#x27;s on/off switch. gamehour settings &amp; lists" data-unsure="0" data-dup="1"><td class="code" data-t>GLOB</td><td><span data-t>Global</span> </td><td data-t>A global: a named value any quest, script or condition can read, such as GameHour, or a mod&#x27;s on/off switch.</td><td class="num">2,677</td><td class="eg"><span data-t>GameHour</span></td></tr>
+      <tr id="p-gmst" data-hay="gmst game setting a game setting: one of the engine&#x27;s tuning numbers or texts, such as jump height or how fast time passes in space. names start with a letter for the kind: f number, i whole number, b yes/no, s text. fcalendartimescalespace settings &amp; lists" data-unsure="0" data-dup="1"><td class="code" data-t>GMST</td><td><span data-t>Game Setting</span> </td><td data-t>A game setting: one of the engine&#x27;s tuning numbers or texts, such as jump height or how fast time passes in space. Names start with a letter for the kind: f number, i whole number, b yes/no, s text.</td><td class="num">2,312</td><td class="eg"><span data-t>fCalendarTimeScaleSpace</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+<section id="characters" class="cat" style="--h: 182">
   <h2>Characters &amp; AI <small></small></h2>
   <p class="lede">People, creatures, their stats and how they think, move and fight.</p>
   <div class="frame"><table>
@@ -278,7 +322,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     </tbody>
   </table></div>
 </section>
-<section id="items" class="cat" style="--h: 182">
+<section id="items" class="cat" style="--h: 320">
   <h2>Items <small></small></h2>
   <p class="lede">Everything you can carry, equip, craft or fire, plus the weapon-handling data behind it.</p>
   <div class="frame"><table>
@@ -315,7 +359,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     </tbody>
   </table></div>
 </section>
-<section id="quests" class="cat" style="--h: 320">
+<section id="quests" class="cat" style="--h: 98">
   <h2>Quests &amp; dialogue <small></small></h2>
   <p class="lede">Quests, conversations, scenes and the system that starts quests for you.</p>
   <div class="frame"><table>
@@ -336,7 +380,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     </tbody>
   </table></div>
 </section>
-<section id="world" class="cat" style="--h: 98">
+<section id="world" class="cat" style="--h: 235">
   <h2>World &amp; cells <small></small></h2>
   <p class="lede">Places and the things put in them: cells, worldspaces, placed objects, doors, furniture, navmeshes.</p>
   <div class="frame"><table>
@@ -374,7 +418,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     </tbody>
   </table></div>
 </section>
-<section id="space" class="cat" style="--h: 235">
+<section id="space" class="cat" style="--h: 12">
   <h2>Space &amp; planets <small></small></h2>
   <p class="lede">Stars, planets, biomes, planet terrain, weather, and the ships and stations you meet in space.</p>
   <div class="frame"><table>
@@ -411,7 +455,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     </tbody>
   </table></div>
 </section>
-<section id="outposts" class="cat" style="--h: 12">
+<section id="outposts" class="cat" style="--h: 150">
   <h2>Outposts &amp; ship building <small></small></h2>
   <p class="lede">The snap system that joins ship and outpost parts, research, and builder colors.</p>
   <div class="frame"><table>
@@ -426,7 +470,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     </tbody>
   </table></div>
 </section>
-<section id="audio" class="cat" style="--h: 150">
+<section id="audio" class="cat" style="--h: 288">
   <h2>Audio <small></small></h2>
   <p class="lede">Ambience, music, footsteps, reverb and the Wwise sound engine links.</p>
   <div class="frame"><table>
@@ -450,7 +494,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     </tbody>
   </table></div>
 </section>
-<section id="visuals" class="cat" style="--h: 288">
+<section id="visuals" class="cat" style="--h: 65">
   <h2>Visuals &amp; effects <small></small></h2>
   <p class="lede">Lighting, image look, fog, particles, explosions, impacts, decals and cameras.</p>
   <div class="frame"><table>
@@ -485,7 +529,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     </tbody>
   </table></div>
 </section>
-<section id="settings" class="cat" style="--h: 65">
+<section id="settings" class="cat" style="--h: 202">
   <h2>Settings &amp; lists <small></small></h2>
   <p class="lede">Game settings, globals, keywords, lists and other shared building blocks.</p>
   <div class="frame"><table>
@@ -507,7 +551,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     </tbody>
   </table></div>
 </section>
-<section id="other" class="cat" style="--h: 202">
+<section id="other" class="cat" style="--h: 340">
   <h2>Other <small></small></h2>
   <p class="lede">Achievements, load screens, photo mode and editor-only helpers.</p>
   <div class="frame"><table>
@@ -641,7 +685,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
       var ok = (!unsure.checked || r.dataset.unsure === '1') &&
                terms.every(function (t) { return r.dataset.hay.indexOf(t) >= 0; });
       r.hidden = !ok;
-      if (ok) { total++; cells[k].forEach(function (c) { hl(c, terms); }); }
+      if (ok) { if (!r.dataset.dup) total++; cells[k].forEach(function (c) { hl(c, terms); }); }
     });
     document.querySelectorAll('section.cat').forEach(function (sec) {
       var all = sec.querySelectorAll('tr[data-hay]').length, n = sec.querySelectorAll('tr[data-hay]:not([hidden])').length;
