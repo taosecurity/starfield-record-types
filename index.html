@@ -142,6 +142,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
   <li><a href="#other"><b class="lbl"><i class="dot" style="--h: 202"></i>Other</b> <span>4</span></a></li>
   <li class="gap"><a href="#console">Console commands</a></li>
   <li><a href="#about">About this list</a></li>
+  <li><a href="#why">Why record types matter</a></li>
 </ul></nav>
 <main>
 <header id="top">
@@ -560,6 +561,54 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <li>Categories are a rough sort to help you browse. Search finds a type anywhere.</li>
     <li>A game update can add records or types; the list is regenerated after updates.</li>
   </ul>
+</section>
+<section id="why" class="about">
+  <h2>Why record types matter</h2>
+  <h3>An example: two mods change Sarah Morgan</h3>
+  <p>Say Mod A gives Sarah Morgan a new outfit and Mod B changes her combat AI. In the game she wears her old outfit, and it isn't obvious why.</p>
+  <p>Sarah's base record is an <code>NPC_</code> record (<code>Companion_SarahMorgan</code>, <code>00005983</code>), and her outfit and her AI settings both live in that one record.
+  When two mods edit the same record, the game doesn't merge their changes: the mod lower in the load order wins the whole record.
+  So Mod B's copy of Sarah, made without Mod A's outfit, replaces Mod A's.</p>
+  <ul>
+    <li><strong>You can predict it before playing.</strong> A conflict checker or xEdit shows "both mods change <code>NPC_</code> 00005983".</li>
+    <li><strong>The fix is clear.</strong> Change the load order to pick the winner, or make a small patch that combines both changes.</li>
+    <li><strong>It's why careful mods avoid editing game records.</strong> Where they can, they add their own records and scripts instead.</li>
+  </ul>
+  <p>The record type also tells you what to check in the console:</p>
+  <ul>
+    <li>A mod that adds a quest (<code>QUST</code>): check it with <code>sqs &lt;quest&gt;</code>.</li>
+    <li>A mod that changes a game setting (<code>GMST</code>): check it with <code>getgs &lt;setting&gt;</code>.</li>
+    <li>A mod that places objects (<code>REFR</code>): look for leftovers with Starfield Engine Fixes' <code>DumpPointerHandles</code>.</li>
+  </ul>
+  <p>In short, the record type tells you where a mod's change lives, who else might overwrite it, and which console command shows whether it worked.</p>
+  <h3>One thing, several records</h3>
+  <p>The most common case is a single thing that exists as two records: a <strong>base record</strong> (the template) and a <strong>reference</strong> (one copy placed in the world).</p>
+  <p>Sarah Morgan has two records, with different IDs:</p>
+  <ul>
+    <li><code>NPC_</code> <code>00005983</code> (<code>Companion_SarahMorgan</code>): her base record, holding her stats, face, outfit and AI.</li>
+    <li><code>ACHR</code> <code>00005986</code> (<code>SarahMorganREF</code>): the actual Sarah standing in the Lodge.</li>
+  </ul>
+  <p>Mixing them up gives very different results in the console:</p>
+  <ul>
+    <li><code>player.moveto 00005986</code> takes you to <em>the</em> Sarah.</li>
+    <li><code>player.placeatme 00005983</code> creates a <em>second</em>, brand-new Sarah next to you.</li>
+    <li>Changing her outfit means editing the <code>NPC_</code> record. Checking whether she's alive, or where she is, means looking at the <code>ACHR</code>.</li>
+  </ul>
+  <p>Items work the same way. The Eon pistol is a <code>WEAP</code> base (<code>000476C4</code>), and every Eon lying around in the world is a separate <code>REFR</code>.
+  <code>player.additem</code> needs the base ID. Clicking a pistol on the floor in the console gives you the reference ID instead, which <code>additem</code> won't accept.</p>
+  <p>Other things made of several record types:</p>
+  <div class="frame"><table class="why">
+    <colgroup><col style="width: 20%"><col></colgroup>
+    <thead><tr><th>Thing</th><th>Record types</th></tr></thead>
+    <tbody>
+      <tr><td>A piece of armor</td><td><code>ARMO</code> (the item: name, value, keywords) + <code>ARMA</code> (the 3D model for each body type). If a mod's armor shows up invisible, the <code>ARMA</code> is usually the problem, not the <code>ARMO</code>.</td></tr>
+      <tr><td>A modded weapon</td><td><code>WEAP</code> + <code>OMOD</code> (each attachment, such as a scope) + often <code>LVLI</code> (the leveled list that decides where it drops)</td></tr>
+      <tr><td>A conversation</td><td><code>DIAL</code> (the topic) + <code>INFO</code> (each line) + often <code>SCEN</code> (the scene that plays it)</td></tr>
+      <tr><td>New Atlantis</td><td><code>WRLD</code> (the worldspace, <code>NewAtlantis</code>) + <code>CELL</code> (each block of it, like <code>CityNewAtlantisLodgeInt</code>) + <code>LCTN</code> (the "location" quests check, <code>CityNewAtlantisLocation</code>)</td></tr>
+      <tr><td>A planet</td><td><code>PNDT</code> (the planet) + <code>BIOM</code> (its biomes) + <code>STDT</code> (its star)</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Why it matters when testing:</strong> when a bug report says "Sarah's outfit is wrong" or "the scope is missing", the record type tells you which record to look at in xEdit or a conflict checker. Otherwise you could end up comparing the wrong one.</p>
 </section>
 <footer>
   <p>Made by Richard Bejtlich of Richard Presents Starfield Essentials: <a href="https://www.youtube.com/@RichardBejtlich" target="_blank" rel="noopener">youtube.com/@RichardBejtlich</a>.</p>
