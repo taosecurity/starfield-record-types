@@ -91,6 +91,13 @@ a { color: var(--accent); }
 .bar input[type=search] { flex: 1 1 18rem; min-width: 0; font: 15px var(--body); color: var(--fg); background: var(--surface);
   border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; }
 .bar input[type=search]:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: transparent; }
+/* search box + Clear button stay on one line, the button right of the box */
+.bar .qwrap { flex: 1 1 18rem; min-width: 0; display: flex; gap: 8px; align-items: stretch; }
+.bar .qwrap input[type=search] { flex: 1 1 auto; min-width: 0; }
+.bar button.qclear { flex: 0 0 auto; font: 600 14px var(--body); color: var(--fg); background: var(--surface);
+  border: 2px solid hsl(var(--h) 60% var(--tint-dot-l)); border-radius: 8px; padding: 6px 14px; cursor: pointer; }
+.bar button.qclear:hover { background: var(--accent-soft); }
+.bar button.qclear:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 .bar label { font-size: 14px; color: var(--muted); display: inline-flex; gap: 6px; align-items: center; }
 .count { font: 13px var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
 .frame { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
@@ -154,7 +161,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
 </ul></nav>
 <main>
 <header id="top">
-  <p class="eyebrow">Starfield 1.16.244.0 &middot; Starfield.esm &middot; 180 record types &middot; 3,829,246 records &middot; +6 types only in add-ons &middot; built 2026-11-09 15:46 UTC</p>
+  <p class="eyebrow">Starfield 1.16.244.0 &middot; Starfield.esm &middot; 180 record types &middot; 3,829,246 records &middot; +6 types only in add-ons &middot; built 2026-11-09 22:19 UTC</p>
   <h1>Starfield Record Types</h1>
   <p class="lede">This page lists every four-letter record type in Starfield's main game file, with what it holds, how many there are, and a real example.
   These are the codes you see in xEdit, Spriggit and conflict reports: <code>GMST</code>, <code>KYWD</code>, <code>NPC_</code>, <code>CELL</code>, <code>QUST</code> and the rest.</p>
@@ -162,7 +169,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
   <p class="byline">More Starfield tools and references are on the <a href="https://taosecurity.github.io/">Richard Presents Development Hub</a>.</p>
 </header>
 <div class="bar" role="search">
-  <input type="search" id="q" placeholder="Search codes, names, explanations, editor IDs (press / to focus)" aria-label="Search record types" autocomplete="off">
+  <span class="qwrap"><input type="search" id="q" placeholder="Search codes, names, explanations, editor IDs (press / to focus)" aria-label="Search record types" autocomplete="off"><button type="button" class="qclear" aria-label="Clear the search box" onclick="var q=document.getElementById('q');q.value='';q.dispatchEvent(new Event('input'));q.focus()">Clear</button></span>
   <label><input type="checkbox" id="unsure"> Only "not sure" types</label>
   <span class="count" id="count"></span>
 </div>
